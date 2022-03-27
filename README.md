@@ -30,16 +30,26 @@ yarn husky set .husky/pre-commit "npx pretty-quick --staged"
 
 4. 解决 eslint 和 Prettier 可能冲突
 
-```
+````
 // https://github.com/prettier/eslint-config-prettier
-yarn add eslint-config-prettier -D
 
+```yarn add eslint-config-prettier eslint-plugin-prettier -D```
 {
   "extends": [
     "some-other-config-you-use",
     "prettier"
   ]
 }
+````
+
+## eslint
+
+```
+yarn add eslint-config-ali @typescript-eslint/parser @typescript-eslint/eslint-plugin eslint-plugin-import eslint-import-resolver-typescript eslint-plugin-react eslint-plugin-react-hooks -D
+```
+
+```
+vscode安装Formatting Toggle
 ```
 
 ## commitlint

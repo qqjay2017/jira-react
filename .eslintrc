@@ -1,0 +1,8 @@
+{
+  "extends": ["eslint-config-ali/typescript/react", "prettier"],
+  "rules": {
+    "no-var": "error",
+    "no-extra-semi": "error",
+    "@typescript-eslint/indent": ["error", 2]
+  }
+}

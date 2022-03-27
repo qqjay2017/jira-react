@@ -1,21 +1,19 @@
 import React from "react";
-import { useEffect, useState } from "react";
+
 import { UserModel } from "types";
 
-type SearchParam = {
+interface SearchParam {
   name: string;
   personId: string;
-};
+}
 
-export const SearchPanel = ({
-  param,
-  setParam,
-  users,
-}: {
+interface SearchPanelProps {
   param: SearchParam;
   setParam: React.Dispatch<React.SetStateAction<SearchParam>>;
   users: UserModel[];
-}) => {
+}
+
+export const SearchPanel = ({ param, setParam, users }: SearchPanelProps) => {
   return (
     <form action="">
       <div>
