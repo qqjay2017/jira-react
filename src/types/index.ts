@@ -9,4 +9,5 @@ export interface ProjectModel {
 export interface UserModel {
   id: number;
   name: string;
+  token: string;
 }

@@ -1,5 +1,5 @@
 {
-  "cSpell.words": ["browserslist", "commitlint"],
+  "cSpell.words": ["browserslist", "commitlint", "middlewares"],
   "files.autoSave": "off",
   "editor.defaultFormatter": "esbenp.prettier-vscode",
   "eslint.validate": [

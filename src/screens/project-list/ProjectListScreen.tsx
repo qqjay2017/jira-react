@@ -1,16 +1,18 @@
-import React from "react";
+import React, { useContext, useEffect, useState } from "react";
 import { SearchPanel } from "./SearchPanel";
 import { List } from "./List";
-import { useEffect, useState } from "react";
 import { apiBaseUrl } from "constant";
 import { ProjectModel, UserModel } from "types";
 import { qsStringify } from "utils/qs";
 import { cleanObject } from "utils";
 import { useMount } from "hooks/useMount";
 import { useDebounceParam } from "hooks/useDebounce";
+import { useAuth } from "context/authContext";
 
 export const ProjectListScreen = () => {
   const [users, setUsers] = useState<UserModel[]>([]);
+  const context = useAuth();
+  console.log(context, "context");
   const [param, setParam] = useState({
     name: "",
     personId: "",
