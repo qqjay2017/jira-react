@@ -30,7 +30,7 @@ yarn husky set .husky/pre-commit "npx pretty-quick --staged"
 
 ```
 
-2. 解决 eslint 和 Prettier 可能冲突
+4. 解决 eslint 和 Prettier 可能冲突
 
 ```
 // https://github.com/prettier/eslint-config-prettier
@@ -43,3 +43,5 @@ yarn add eslint-config-prettier -D
   ]
 }
 ```
+
+## commitlint
