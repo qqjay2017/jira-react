@@ -113,3 +113,10 @@ json-server --watch db.json
 // or
  "json-server":"json-server --watch mock/db.json --port 4000",
 ```
+
+### 转码
+
+```js
+decodeURIComponent(""); // 解码
+encodeURIComponent(""); // 转码
+```
