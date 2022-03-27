@@ -83,3 +83,33 @@ npx husky add .husky/commit-msg 'npx --no -- commitlint --edit "$1"'
   'test'
 ];
 ```
+
+## 本地 mock 服务,使用 json-server
+
+> https://www.npmjs.com/package/json-server
+
+1. 安装
+
+```shell
+全局安装
+npm install -g json-server
+项目安装
+yarn add  json-server -D
+```
+
+2. 新建静态资源
+
+```
+// db.json
+{
+    "users":[]
+}
+```
+
+3. 启动
+
+```shell
+json-server --watch db.json
+// or
+ "json-server":"json-server --watch mock/db.json --port 4000",
+```
