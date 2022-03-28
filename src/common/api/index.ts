@@ -60,7 +60,7 @@ export class API {
           //   return;
           // }
           reject(err);
-          return this.onError(err);
+          //   return this.onError(err);
         });
 
       //   return instance;
@@ -68,6 +68,7 @@ export class API {
   }
 
   onError(err: any) {
+    // console.log(err)
     // if (err.status) {
     //   const errMessage = get(
     //     err.response,
