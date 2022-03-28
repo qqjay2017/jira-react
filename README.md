@@ -130,3 +130,16 @@ json-server --watch db.json
 decodeURIComponent(""); // 解码
 encodeURIComponent(""); // 转码
 ```
+
+## CRACO
+
+```
+yarn add  @craco/craco craco-less -D
+```
+
+```
+"start": "craco start",
+"build": "craco build",
+"test": "craco test",
+"eject": "react-scripts eject"
+```
