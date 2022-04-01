@@ -1,19 +1,25 @@
 // 0值也是true
+import { ValueKeyIterateeTypeGuard } from "lodash";
+import pickBy from "lodash/pickBy";
+
 export const isFalsy = (value: unknown) => {
   return value === 0 ? true : !!value;
 };
 
-export const cleanObject = (object: Record<string | symbol, any>) => {
-  const result = {
-    ...object,
+export const cleanObject = (object: Record<string | symbol, unknown>) => {
+  // const result = {
+  //   ...object,
+  // };
+
+  // Reflect.ownKeys(object).forEach((key) => {
+  //   const flag = isFalsy(result[key]);
+  //   if (!flag) {
+  //     delete result[key];
+  //   }
+  // });
+  const predicate = (value: unknown) => {
+    return value === 0 || value === false || !!value;
   };
 
-  Reflect.ownKeys(object).forEach((key) => {
-    const flag = isFalsy(result[key]);
-    if (!flag) {
-      delete result[key];
-    }
-  });
-
-  return result;
+  return pickBy(object, predicate);
 };

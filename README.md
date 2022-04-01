@@ -143,3 +143,7 @@ yarn add  @craco/craco craco-less -D
 "test": "craco test",
 "eject": "react-scripts eject"
 ```
+
+## vscode 插件集合
+
+`https://marketplace.visualstudio.com/items?itemName=iceworks-team.iceworks`
