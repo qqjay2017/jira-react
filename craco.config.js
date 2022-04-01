@@ -21,7 +21,7 @@ module.exports = {
   devServer: {
     port: "3005",
 
-    open: false,
+    open: true,
     proxy: {
       "/api": {
         target: "http://localhost:4000",
