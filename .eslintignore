@@ -15,3 +15,4 @@ serviceWorker.ts
 src/reportWebVitals.ts
 .github
 .vscode
+craco.config.js

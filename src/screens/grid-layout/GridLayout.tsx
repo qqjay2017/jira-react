@@ -1,13 +1,13 @@
-/** @jsxImportSource @emotion/react */
+import styled from "styled-components";
 
-import styled from "@emotion/styled";
+import styles from "./styles.module.less";
 
 export const GridLayout = () => {
   return (
     <Layout>
       <Header>Header</Header>
       <Menu>Menu</Menu>
-      <Content>Content</Content>
+      <Content className={styles.bgYellow}>Content</Content>
       <Aside>Aside</Aside>
       <Footer>Footer</Footer>
     </Layout>
@@ -73,5 +73,4 @@ const Footer = styled.div`
 
 const Content = styled.div`
   grid-area: content;
-  background-color: greenyellow;
 `;
