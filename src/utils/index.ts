@@ -17,6 +17,7 @@ export const cleanObject = (object: Record<string | symbol, unknown>) => {
   //     delete result[key];
   //   }
   // });
+  // 不过滤的规则
   const predicate = (value: unknown) => {
     return value === 0 || value === false || !!value;
   };

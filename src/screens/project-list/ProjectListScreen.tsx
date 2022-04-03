@@ -36,7 +36,7 @@ export const ProjectListScreen = () => {
   );
   // 依赖页面参数进行请求
   const {
-    data: list,
+    data: projectList,
     run: runProjectReq,
     loading: projectLoading,
   } = useRequest(
@@ -47,10 +47,10 @@ export const ProjectListScreen = () => {
     },
     {
       // debounceWait: 500,
-      manual: false,
+      // manual: false,
       refreshDeps: [param],
-      loadingDelay: 1,
-      refreshOnWindowFocus: true,
+      // loadingDelay: 1,
+      // refreshOnWindowFocus: true,
     }
   );
 
@@ -58,7 +58,11 @@ export const ProjectListScreen = () => {
     <div>
       <SearchPanel param={param} setParam={setParam} users={users || []} />
       {String(projectLoading)}
-      <List list={list || []} users={users || []} />
+      <List
+        dataSource={projectList}
+        loading={projectLoading}
+        users={users || []}
+      />
       <button onClick={() => runProjectReq()}>btn</button>
     </div>
   );

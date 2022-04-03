@@ -1,28 +1,53 @@
+import { Table, TableProps } from "antd";
+import dayjs from "dayjs";
 import React from "react";
 import { ProjectModel, UserModel } from "types";
-export const List = ({
-  list,
-  users,
-}: {
-  list: ProjectModel[];
+
+type ProjectTableProps = TableProps<ProjectModel>;
+
+interface ListProps extends ProjectTableProps {
   users: UserModel[];
-}) => {
+}
+
+export const List = ({ users, ...tableProps }: ListProps) => {
+  const columns: ProjectTableProps["columns"] = [
+    {
+      title: "id",
+      dataIndex: "id",
+    },
+    {
+      title: "name",
+      dataIndex: "name",
+      sorter: (a, b) => a.name.localeCompare(b.name),
+    },
+    {
+      title: "负责人",
+      dataIndex: "personId",
+      render: (text) => {
+        return (
+          <span>{users.find((user) => user.id === text)?.name || "未知"}</span>
+        );
+      },
+    },
+    {
+      title: "部门",
+      dataIndex: "organization",
+    },
+    {
+      title: "created",
+      dataIndex: "created",
+      render: (text) => dayjs(text).format("YYYY-MM-DD"),
+    },
+  ];
+
   return (
-    <table>
-      <thead>
-        <tr>
-          <th>名称</th>
-          <th>负责人</th>
-        </tr>
-      </thead>
-      <tbody>
-        {list.map((project) => (
-          <tr key={project.name}>
-            <td>{project.name}</td>
-            <td>{users.find((user) => user.id === project.personId)?.name}</td>
-          </tr>
-        ))}
-      </tbody>
-    </table>
+    <div>
+      <Table
+        rowKey={"id"}
+        pagination={false}
+        columns={columns}
+        {...tableProps}
+      />
+    </div>
   );
 };

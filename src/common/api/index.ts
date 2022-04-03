@@ -26,7 +26,11 @@ const superagentPrefix: (prefix: string) => request.Plugin = (prefix) => {
 };
 
 export class API {
-  invoke<T>(method: string, url: string, data?: object): Promise<T> {
+  invoke<T>(
+    method: string,
+    url: string,
+    data?: Record<string | symbol, unknown>
+  ): Promise<T> {
     return new Promise((resolve, reject) => {
       const instance = request(method, url)
         .use(superagentNoCache())

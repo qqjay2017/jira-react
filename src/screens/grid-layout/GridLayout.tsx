@@ -1,13 +1,16 @@
 import styled from "styled-components";
 
 import styles from "./styles.module.less";
+import ProjectListScreen from "screens/project-list";
 
 export const GridLayout = () => {
   return (
     <Layout>
       <Header>Header</Header>
       <Menu>Menu</Menu>
-      <Content className={styles.bgYellow}>Content</Content>
+      <Content>
+        <ProjectListScreen />
+      </Content>
       <Aside>Aside</Aside>
       <Footer>Footer</Footer>
     </Layout>
