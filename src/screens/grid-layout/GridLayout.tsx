@@ -2,18 +2,44 @@ import styled from "styled-components";
 
 import styles from "./styles.module.less";
 import ProjectListScreen from "screens/project-list";
+import { Button } from "antd";
+import { ErrorBoundary, FallbackProps } from "react-error-boundary";
+import { useDocumentTitle } from "hooks/useDocumentTitle";
+
+const ErrorFallback: React.FC<FallbackProps> = (props) => {
+  // eslint-disable-next-line react/prop-types
+  const { error, resetErrorBoundary } = props;
+  return (
+    <div role="alert">
+      <p>Something went wrong:</p>
+      <pre>{error.message}</pre>
+      <button onClick={resetErrorBoundary}>Try again</button>
+    </div>
+  );
+};
 
 export const GridLayout = () => {
+  useDocumentTitle("GridLayout", false);
   return (
-    <Layout>
-      <Header>Header</Header>
-      <Menu>Menu</Menu>
-      <Content>
-        <ProjectListScreen />
-      </Content>
-      <Aside>Aside</Aside>
-      <Footer>Footer</Footer>
-    </Layout>
+    <ErrorBoundary FallbackComponent={ErrorFallback}>
+      <Layout>
+        <Header>
+          <Button
+            onClick={() => {
+              throw new Error("点击抛出一个异常");
+            }}
+          >
+            点击抛出一个异常
+          </Button>
+        </Header>
+        <Menu>Menu</Menu>
+        <Content>
+          <ProjectListScreen />
+        </Content>
+        <Aside>Aside</Aside>
+        <Footer>Footer</Footer>
+      </Layout>
+    </ErrorBoundary>
   );
 };
 
