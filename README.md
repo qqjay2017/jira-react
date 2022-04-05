@@ -147,3 +147,12 @@ yarn add  @craco/craco craco-less -D
 ## vscode 插件集合
 
 `https://marketplace.visualstudio.com/items?itemName=iceworks-team.iceworks`
+
+```
+"eslintConfig": {
+    "extends": [
+      "eslint-config-ali/typescript/react",
+      "prettier"
+    ]
+  },
+```

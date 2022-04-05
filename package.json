@@ -36,12 +36,6 @@
     "json-server": "json-server --watch mock/db.json --port 4000 --middlewares mock/middleware.js",
     "prepare": "husky install"
   },
-  "eslintConfig": {
-    "extends": [
-      "eslint-config-ali/typescript/react",
-      "prettier"
-    ]
-  },
   "browserslist": {
     "production": [
       ">0.2%",

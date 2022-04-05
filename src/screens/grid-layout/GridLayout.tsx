@@ -5,6 +5,7 @@ import ProjectListScreen from "screens/project-list";
 import { Button } from "antd";
 import { ErrorBoundary, FallbackProps } from "react-error-boundary";
 import { useDocumentTitle } from "hooks/useDocumentTitle";
+import Test from "screens/Test";
 
 const ErrorFallback: React.FC<FallbackProps> = (props) => {
   // eslint-disable-next-line react/prop-types
@@ -32,7 +33,9 @@ export const GridLayout = () => {
             点击抛出一个异常
           </Button>
         </Header>
-        <Menu>Menu</Menu>
+        <Menu>
+          <Test />
+        </Menu>
         <Content>
           <ProjectListScreen />
         </Content>
