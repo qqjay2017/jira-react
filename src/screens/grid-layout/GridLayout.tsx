@@ -6,6 +6,16 @@ import { Button } from "antd";
 import { ErrorBoundary, FallbackProps } from "react-error-boundary";
 import { useDocumentTitle } from "hooks/useDocumentTitle";
 import Test from "screens/Test";
+import {
+  BrowserRouter,
+  Routes,
+  Route,
+  Link,
+  Outlet,
+  useSearchParams,
+  createSearchParams,
+} from "react-router-dom";
+import LoginScreen from "screens/login";
 
 const ErrorFallback: React.FC<FallbackProps> = (props) => {
   // eslint-disable-next-line react/prop-types
@@ -21,24 +31,37 @@ const ErrorFallback: React.FC<FallbackProps> = (props) => {
 
 export const GridLayout = () => {
   useDocumentTitle("GridLayout", false);
+  const [searchParams, setSearchParams] = useSearchParams();
   return (
     <ErrorBoundary FallbackComponent={ErrorFallback}>
       <Layout>
-        <Header>
-          <Button
-            onClick={() => {
-              throw new Error("点击抛出一个异常");
-            }}
-          >
-            点击抛出一个异常
-          </Button>
-        </Header>
+        <Header />
         <Menu>
-          <Test />
+          {/* <Test /> */}
+          <div>
+            <Link to={"/"}>/</Link>
+          </div>
+          <div>
+            <Link to={"/about/1"}>/about</Link>
+          </div>
+          <div>
+            <Link to={"/project"}>/project</Link>
+          </div>
+          <div>
+            <Link to={"/login"}>/login</Link>
+          </div>
+          <div>
+            <Button
+              onClick={() => setSearchParams(createSearchParams({ test: "1" }))}
+            >
+              useSearchParams
+            </Button>
+          </div>
         </Menu>
         <Content>
-          <ProjectListScreen />
+          <Outlet />
         </Content>
+
         <Aside>Aside</Aside>
         <Footer>Footer</Footer>
       </Layout>

@@ -156,3 +156,107 @@ yarn add  @craco/craco craco-less -D
     ]
   },
 ```
+
+## react-router
+
+1. 安装
+
+```
+yarn add react-router-dom@6
+```
+
+> https://reactrouter.com/docs/en/v6/examples/auth
+
+1. 根组件套上 ` <BrowserRouter>`
+
+```tsx
+// index.tsx
+import React from "react";
+import ReactDOM from "react-dom";
+import { BrowserRouter } from "react-router-dom";
+
+import "./index.css";
+import App from "./App";
+
+ReactDOM.render(
+  <React.StrictMode>
+    <BrowserRouter>
+      <App />
+    </BrowserRouter>
+  </React.StrictMode>,
+  document.getElementById("root")
+);
+```
+
+2. 开始写路由
+
+(后台管理 layout 模式的路由一般这么写)
+
+```tsx
+// App.tsx
+import GridLayout from "screens/grid-layout";
+import { useBoolean } from "ahooks";
+
+import { Route, Routes } from "react-router-dom";
+import ProjectListScreen from "screens/project-list";
+import Login from "screens/login";
+import About from "screens/About";
+import NoMatch from "screens/NoMatch";
+import Home from "screens/Home";
+
+function App() {
+  const [flag, { toggle }] = useBoolean(false);
+  return (
+    <div className="App">
+      <Routes>
+        <Route path={"/login"} element={<Login />} />
+        <Route path={"/"} element={<GridLayout />}>
+          <Route index element={<Home />} />
+          <Route path={"project"} element={<ProjectListScreen />} />
+          <Route path={"about"} element={<About />} />
+          <Route path={"*"} element={<NoMatch />} />
+        </Route>
+      </Routes>
+    </div>
+  );
+}
+
+export default App;
+```
+
+#### useSearchParams
+
+解析`http://localhost:3005/about/1?test=1` 里面的 test=1
+
+> https://reactrouter.com/docs/en/v6/api#usesearchparams
+
+```tsx
+// 解析
+function About() {
+  const [searchParams] = useSearchParams();
+  console.log(searchParams.get("test"), "searchParams");
+
+  return <div>About</div>;
+}
+
+export default About;
+```
+
+```tsx
+//设置值
+import {
+
+  createSearchParams,
+} from "react-router-dom";
+ onClick={() => setSearchParams(createSearchParams({ test: "1" }))}
+```
+
+#### useParams
+
+解析:id
+
+> https://reactrouter.com/docs/en/v6/api#useparams
+
+```tsx
+const params = useParams();
+```
