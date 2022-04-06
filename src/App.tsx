@@ -9,6 +9,7 @@ import Login from "screens/login";
 import About from "screens/About";
 import NoMatch from "screens/NoMatch";
 import Home from "screens/Home";
+import GanttInitial from "screens/Gantt/GanttInitial";
 
 function App() {
   const [flag, { toggle }] = useBoolean(false);
@@ -19,6 +20,7 @@ function App() {
         <Route path={"/"} element={<GridLayout />}>
           <Route index element={<Home />} />
           <Route path={"project"} element={<ProjectListScreen />} />
+          <Route path={"gantt-initial"} element={<GanttInitial />} />
           <Route path={"about/:id"} element={<About />} />
           <Route path={"*"} element={<NoMatch />} />
         </Route>
