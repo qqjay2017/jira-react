@@ -15,8 +15,6 @@
     "@types/react-dom": "^17.0.14",
     "ahooks": "^3.2.0",
     "antd": "^4.19.3",
-    "approve-ts": "^1.0.20",
-    "backlog-ts": "^0.2.9",
     "craco-less": "^2.0.0",
     "dayjs": "^1.11.0",
     "decimal.js": "^10.3.1",

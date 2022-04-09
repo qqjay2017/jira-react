@@ -5,7 +5,7 @@ import moment from "moment";
 import Decimal from "decimal.js";
 import { Button } from "antd";
 
-export interface Task {
+interface Task {
   id: number;
   text: string;
   start_date: string;

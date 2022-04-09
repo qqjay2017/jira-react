@@ -48,7 +48,13 @@ export const GridLayout = () => {
             <Link to={"/project"}>/project</Link>
           </div>
           <div>
+            <Link to={"/day-js"}>/day-js</Link>
+          </div>
+          <div>
             <Link to={"/gantt-initial"}>/gantt-initial</Link>
+          </div>
+          <div>
+            <Link to={"/gantt-custom"}>/gantt-custom</Link>
           </div>
           <div>
             <Link to={"/login"}>/login</Link>
