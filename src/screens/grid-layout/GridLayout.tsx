@@ -33,48 +33,46 @@ export const GridLayout = () => {
   useDocumentTitle("GridLayout", false);
   const [searchParams, setSearchParams] = useSearchParams();
   return (
-    <ErrorBoundary FallbackComponent={ErrorFallback}>
-      <Layout>
-        <Header />
-        <Menu>
-          {/* <Test /> */}
-          <div>
-            <Link to={"/"}>/</Link>
-          </div>
-          <div>
-            <Link to={"/about/1"}>/about</Link>
-          </div>
-          <div>
-            <Link to={"/project"}>/project</Link>
-          </div>
-          <div>
-            <Link to={"/day-js"}>/day-js</Link>
-          </div>
-          <div>
-            <Link to={"/gantt-initial"}>/gantt-initial</Link>
-          </div>
-          <div>
-            <Link to={"/gantt-custom"}>/gantt-custom</Link>
-          </div>
-          <div>
-            <Link to={"/login"}>/login</Link>
-          </div>
-          <div>
-            <Button
-              onClick={() => setSearchParams(createSearchParams({ test: "1" }))}
-            >
-              useSearchParams
-            </Button>
-          </div>
-        </Menu>
-        <Content>
-          <Outlet />
-        </Content>
+    <Layout>
+      <Header />
+      <Menu>
+        {/* <Test /> */}
+        <div>
+          <Link to={"/"}>/</Link>
+        </div>
+        <div>
+          <Link to={"/about/1"}>/about</Link>
+        </div>
+        <div>
+          <Link to={"/project"}>/project</Link>
+        </div>
+        <div>
+          <Link to={"/day-js"}>/day-js</Link>
+        </div>
+        <div>
+          <Link to={"/gantt-initial"}>/gantt-initial</Link>
+        </div>
+        <div>
+          <Link to={"/gantt-custom"}>/gantt-custom</Link>
+        </div>
+        <div>
+          <Link to={"/login"}>/login</Link>
+        </div>
+        <div>
+          <Button
+            onClick={() => setSearchParams(createSearchParams({ test: "1" }))}
+          >
+            useSearchParams
+          </Button>
+        </div>
+      </Menu>
+      <Content>
+        <Outlet />
+      </Content>
 
-        <Aside>Aside</Aside>
-        <Footer>Footer</Footer>
-      </Layout>
-    </ErrorBoundary>
+      <Aside>Aside</Aside>
+      <Footer>Footer</Footer>
+    </Layout>
   );
 };
 

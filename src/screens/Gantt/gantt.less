@@ -1,0 +1,69 @@
+.ganttWrap {
+  position: relative;
+  width: 100%;
+}
+
+.ganttMenuWrap {
+  position: fixed;
+  z-index: 10;
+  transition: all 0.1s ease;
+}
+
+.toolbar {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  height: 60px;
+}
+
+//  !甘特图相关开始!
+.gantt_task_line {
+  &.bg-finished {
+    background-color: #84bd54;
+    border: none;
+  }
+
+  &.bg-canceled {
+    background-color: #da645d;
+    border: none;
+  }
+
+  &.bg-default {
+    background-color: rgba(0, 0, 0, 0.45);
+    border: none;
+  }
+
+  &.bg-unfinished {
+    background-color: #5692f0;
+    border: none;
+  }
+}
+.gantt_task_progress {
+  background-color: #84bd54;
+}
+
+.gantt_task_line,
+.gantt_line_wrapper {
+  margin-top: -9px;
+}
+.gantt_side_content {
+  margin-bottom: 7px;
+}
+.gantt_task_link .gantt_link_arrow {
+  margin-top: -12px;
+}
+.gantt_side_content.gantt_right {
+  bottom: 0;
+}
+
+.baseline {
+  position: absolute;
+  border-radius: 2px;
+  opacity: 0.6;
+  margin-top: 0;
+  height: 20px;
+  background: #ffd180;
+  border: 1px solid rgb(255, 153, 0);
+}
+
+//  !甘特图相关结束!

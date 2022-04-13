@@ -3,6 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "@ant-design/icons": "^4.7.0",
     "@emotion/core": "^11.0.0",
     "@emotion/react": "^11.8.2",
     "@emotion/styled": "^11.8.1",
@@ -19,8 +20,10 @@
     "dayjs": "^1.11.0",
     "decimal.js": "^10.3.1",
     "dhtmlx-gantt": "^7.1.10",
+    "ljc-react": "^0.1.0",
     "lodash": "^4.17.21",
     "moment": "^2.29.2",
+    "nanoid": "^3.3.2",
     "query-string": "^7.1.1",
     "react": "^17.0.2",
     "react-dom": "^17.0.2",

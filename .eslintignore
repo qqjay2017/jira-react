@@ -16,3 +16,4 @@ src/reportWebVitals.ts
 .github
 .vscode
 craco.config.js
+dhtmlxgantt.js
